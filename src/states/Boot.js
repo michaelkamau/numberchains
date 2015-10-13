@@ -1,4 +1,4 @@
-BasicGame = {
+NumberChains = {
 
     /* Here we've just got some global level vars that persist regardless of State swaps */
     score: 0,
@@ -6,15 +6,15 @@ BasicGame = {
     /* If the music in your game needs to play through-out a few State swaps, then you could reference it here */
     music: null,
 
-    /* Your game can check BasicGame.orientated in internal loops to know if it should pause or not */
+    /* Your game can check NumberChains.orientated in internal loops to know if it should pause or not */
     orientated: false
 
 };
 
-BasicGame.Boot = function (game) {
+NumberChains.Boot = function (game) {
 };
 
-BasicGame.Boot.prototype = {
+NumberChains.Boot.prototype = {
 
     init: function () {
 
@@ -45,13 +45,16 @@ BasicGame.Boot.prototype = {
     preload: function () {
 
         //  Here we load the assets required for our preloader (in this case a background and a loading bar)
-        this.load.image('preloaderBackground', 'images/preloader_background.jpg');
-        this.load.image('preloaderBar', 'images/preloadr_bar.png');
+        //this.load.image('preloaderBackground', 'images/preloader_background.jpg');
+        //this.load.image('preloaderBar', 'images/preloadr_bar.png');
 
     },
 
     create: function () {
 
+        // set the background of the game
+        this.stage.setBackgroundColor("#2F4E2D");
+        
         this.state.start('Preloader');
 
     },
@@ -66,7 +69,7 @@ BasicGame.Boot.prototype = {
 
     enterIncorrectOrientation: function () {
 
-        BasicGame.orientated = false;
+        NumberChains.orientated = false;
 
         document.getElementById('orientation').style.display = 'block';
 
@@ -74,7 +77,7 @@ BasicGame.Boot.prototype = {
 
     leaveIncorrectOrientation: function () {
 
-        BasicGame.orientated = true;
+        NumberChains.orientated = true;
 
         document.getElementById('orientation').style.display = 'none';
 

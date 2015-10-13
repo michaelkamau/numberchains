@@ -1,5 +1,5 @@
 
-BasicGame.Game = function (game) {
+NumberChains.Game = function (game) {
 
 	//	When a State is added to Phaser it automatically has the following properties set on it, even if they already exist:
 
@@ -24,11 +24,13 @@ BasicGame.Game = function (game) {
 
 };
 
-BasicGame.Game.prototype = {
+NumberChains.Game.prototype = {
 
 	create: function () {
 
 		//	Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
+
+    
 
 	},
 
